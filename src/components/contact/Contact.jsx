@@ -1,32 +1,23 @@
-// import React from 'react'
-
-// export default function Contact() {
-//   return (
-//     <div>Contact</div>
-//   )
-// }
-
 import React from 'react'
 import './contact.css'
 import {MdOutlineEmail} from 'react-icons/md'
 import {AiOutlineLinkedin} from 'react-icons/ai'
 import {BsWhatsapp} from 'react-icons/bs'
-import {useRef} from 'react'
+import { useRef } from 'react'
+import emailjs from 'emailjs-com'
 
 const Contact = () => {
-const form = useRef();
-const sendEmail = (e) => {
-e.preventDefault();
-// emailjs.sendForm('service_5vuauza', 'template_fdnnl56', form.current,
-// 'EmSdUNQzQuxkUqGWx')
-e.target.reset()
-.then((result) => {
-console.log(result.text)
-},(error) =>{
-console.log(error.text);
-});
-};
-return (
+ const form = useRef();
+  
+ const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_vf9ao8e', 'template_pw96dvn', form.current, '0WGAoOiAstF1Y0XQT')
+    
+    e.target.reset()
+  };
+
+  return (
 
 <section id="contact">
 <h5>Get in touch</h5>
@@ -37,7 +28,7 @@ return (
 <MdOutlineEmail className='contact__option__icon'/>
 
 <h4>Email</h4>
-<h5>mclouis@gmail.com</h5>
+<h5>mclouisre@gmail.com</h5>
 <a href='mailto:mclouisre@gmail.com' target='_blank' rel='' >send a message</a>
 </article>
 <article className='contact__option'>
@@ -45,7 +36,7 @@ return (
 
 <h4>LinkedIn</h4>
 <h5>Profile</h5>
-<a href='https://www.linkedin.com/' rel=''
+<a href='https://linkedin.com/in/mclouis-reigns-572b22271/' rel=''
 target='_blank' >Tap me on LinkedIn</a>
 </article>
 <article className='contact__option'>
@@ -59,20 +50,20 @@ target='_blank'>Whatsapp me</a>
 </div>
 
 <form ref={form} onSubmit={sendEmail}>
- <div className='Name'>  
-<input type="text" name='name' placeholder='full name' required/>
-</div> 
+ <div>  
+<input type="text" name='name' placeholder='full name' required
 
-<div className='Email'>
+   
+/>
+</div>
+<div>
 <input type="email" name='email' placeholder='your email' required/>
 </div>
-
-<div className='Message'>
+<div>
 <textarea name="message" id="message" cols="30" rows="10"
 placeholder='your message' required></textarea>
 </div>
-
-<div className='submit-Btn'>
+<div>
 <button type="submit" className='btn btn-primary'>send message</button>
 </div>
 </form>
