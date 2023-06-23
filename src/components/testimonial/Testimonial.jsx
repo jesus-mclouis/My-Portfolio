@@ -10,7 +10,7 @@ const Testimonial = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("https://backend-portfolio.cyclic.app/api/testimonial").then(response => {
+        axios.get("https://mclouisre.cyclic.app/api/testimonial").then(response => {
             const formattedData = response.data.data.map(item => ({
                 id: item._id,
                 avatar: item.avatar,

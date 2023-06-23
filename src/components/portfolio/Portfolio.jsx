@@ -7,7 +7,7 @@ export const Portfolio = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("https://backend-portfolio.cyclic.app/api/portfolio").then(response => {
+        axios.get("https://mclouisre.cyclic.app/api/portfolio").then(response => {
             const formattedData = response.data.data.map(item => ({
                 id: item._id,
                 image: item.image,
