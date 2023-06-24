@@ -19,8 +19,14 @@
 .about__me__image{
     border-radius: 2rem;
     overflow: hidden;
-    transform: rotate(-10deg);
+    transform: rotate(10deg);
     transition: var(--transition);
+}
+section .about_container .about_me .about_me-image img{
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
 }
 
 .about__me__image:hover{
